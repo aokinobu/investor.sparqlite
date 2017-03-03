@@ -1,0 +1,229 @@
+<html><head><link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="sl-icons.html">
+
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-toolbar/app-toolbar.html">
+
+
+
+</head><body><dom-module id="sl-app">
+  <template>
+    <style>
+a {
+  text-decoration: none;
+  font-size: inherit;
+  color: inherit;
+}
+.toolbar {
+  @apply(--layout-horizontal);
+  @apply(--layout-end-justified);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+.tabs {
+  height: 100%;
+  @apply(--layout-horizontal);
+}
+.tabs > a {
+  @apply(--layout-vertical);
+  @apply(--layout-center-center);
+  margin: 12px 16px 12px;
+  border-bottom: 1px solid #222;
+}
+header {
+  @apply(--layout-vertical);
+  @apply(--layout-center-center);
+  height: calc(100vh - 64px);
+  padding: 0 16px;
+  background-image: url('//cdn.pixabay.com/photo/2014/04/04/21/57/blue-313995_960_720.jpg');
+  backgrond-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+header > h2 {
+  font-size: 56px;
+  font-weight: 300;
+  margin: 0;
+}
+header > p {
+  font-size: 32px;
+}
+section {
+  padding: 88px 16px;
+}
+.container {
+  @apply(--layout-horizontal);
+  max-width: 800px;
+  margin: 0 auto;
+}
+.container > * {
+  @apply(--layout-flex);
+}
+.container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.container h3 {
+  font-size: 32px;
+  font-weight: 300;
+  margin: 24px 0;
+}
+.container p {
+  line-height: 1.5;
+}
+@media (max-width: 600px) {
+  .container {
+    @apply(--layout-vertical);
+  }
+}
+</style>
+
+<app-header-layout>
+
+<app-header reveals="" effects="waterfall">
+
+  <app-toolbar class="toolbar">
+    <div class="tabs">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </app-toolbar>
+
+</app-header>
+
+<header>
+  <h2>合同会社Sparqlite</h2>
+  <p>糖鎖情報化学研究</p>
+</header>
+
+<section id="about">
+  <div class="container">
+    <div>
+      <img width="75%" src="//glytoucan.org/img/glytoucan_can.png">
+    </div>
+    <div>
+      <h3>About</h3>
+      <p>
+      2014年より「JST ライフサイエンスデータベース統合推進事業」に参画し、同年、糖鎖構造レポジトリである「GlyTouCan」を開発し、リリースしました。リリース後、日本糖質学会を始め、国際学会への発表を行い、国内の糖鎖関連データベースだけではなく、海外との国際連携を行い、糖鎖構造による統合化を推進してきました。RDF・オントロジー・SPARQLといったセマンティックウェブ技術により、従来のRDBによるデータベースでは難しかった、データの統合化を実現してきました。
+      </p>
+      <p>
+      代表社員：青木ポール信行 <a href="https://www.linkedin.com/in/aokinobu" target="_blank">linkedin経歴</a>
+      </p>
+      <p>
+      執行社員：新町大輔
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="container">
+    <div>
+      <img src="//upload.wikimedia.org/wikipedia/commons/1/1a/Sucrose_molecule.svg">
+    </div>
+    <div>
+      <h3>Research</h3>
+      <p>
+      GlyTouCanプロジェクトから生まれたRDFのトランズアクション入出力バッチツールを利用して新しい糖鎖情報のLinked Databaseを研究。こちらのツールを活かして糖鎖に関連している淡白、遺伝子、化学、医療、文献データを追加して幅広いジャンルから操作しやすいインタフェースから閲覧できるようなシステムを検討しています。
+      </p><p>
+      </p>
+      整合性が保ったデータの中、マシーンラーニングのライブラリを利用して新しい関連データをマイニングできるようになってきます。糖鎖の研究は、インフォマティクスが安定していない時から膨大なデータが存在していますが、未だリンクされていません。その上、トリー構造は文書で説明するより、画像で表す場合は多いので、画像認識ツールの仕様と仕組みを研究するとさらに研究の関連性を見えてきます。
+      <p></p>
+    </div>
+  </div>
+</section>
+
+
+<section id="services">
+  <div class="container">
+    <div>
+      <img width="50%" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/2000px-Tux.svg.png">
+    </div>
+    <div>
+      <h3>Services</h3>
+      <p>
+      糖鎖研究に必要となってきている複雑なシステム構成をインフラからユーザ・インタフェースまですべて設計・開発・構築・運用・論文の英訳・探索サービスを提供します。
+      </p>
+
+      システム開発コンサルティング
+<ul>
+<li>
+      セマンティックウェブ技術を活躍したオントロジー（データスキーマ）設計
+</li>
+<li>
+      ウエッブサイト、デスクトップ、モバイルアプリまで、幅広く対応します。
+</li>
+<li>
+      糖鎖インフォマティクスのデータ解析、RDF化、API化を実施します。
+</li>
+</ul>
+      研究者のインフラ構築
+<ul>
+<li>
+      各種サーバの企画、提案、設計、構築、運用
+</li>
+<li>
+      特に、仮想化技術（Docker Container技術）には自信があります。
+</li>
+</ul>
+      クラウドサービス
+<ul>
+<li>
+      インフラ構築のエキスパティースを活躍してクラウドサービスも提供します。
+</li>
+<li>
+      システム管理・メンテナンスをすべてお任せしてください。
+</li>
+</ul>
+      ソフト開発
+<ul>
+<li>
+      ウエッブサイトならなんでも作れるから、仕事がないケースはない。
+</li>
+<li>
+      Idea看板に載せる・載せているものを作る
+</li>
+</ul>
+      <p></p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div>
+      <img width="50%" src="//cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454733_960_720.png">
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSc1wFQzOjYpwXM-1HHOyHfcAzJaE7b8FbW00SqWsKLOQYJG4g/viewform" target="_blank">お問い合わせフォーム</a></p>
+    </div>
+  </div>
+</section>
+
+</app-header-layout>
+  </template>
+
+  <script>Polymer({is:"sl-app",properties:{page:{type:String,reflectToAttribute:!0,observer:"_pageChanged"}},observers:["_routePageChanged(routeData.page)"],_routePageChanged:function(e){this.page=e||"about",this.$.drawer.persistent||this.$.drawer.close()},_pageChanged:function(e){var t=this.resolveUrl("sl-"+e+".html");this.importHref(t,null,this._showPage404,!0)},_showPage404:function(){this.page="view404"}});</script>
+</dom-module>
+</body></html>
